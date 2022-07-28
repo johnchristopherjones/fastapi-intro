@@ -1,11 +1,11 @@
 from fastapi import FastAPI
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 app = FastAPI()
 
 
 class Item(BaseModel):
-    name: str
+    name: str = Field(title="Pen Name", description="Names of pens")
     price: float
     is_offer: bool | None = None
 
